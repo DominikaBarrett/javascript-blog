@@ -2,7 +2,10 @@
 //   const links = document.querySelectorAll('.titles a');
 //   console.log('links:', links);
 // });
-const titleClickHandler = function(){
+const titleClickHandler = function(event){
+  event.preventDefault();
+  clickedElement.
+  // ????? nie wiemjak to zapisac
   console.log('Link was clicked!');
 }
 
