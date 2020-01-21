@@ -21,7 +21,7 @@ const activeLinks = document.querySelectorAll('.titles a.active');
     }
 
 /* add class 'active' to the clicked link */
-const clickedElement = document.querySelectorAll(.'.titles a'.)
+
  for (let clickedElement of clickedElements){
   clickedElement.classList.add('active');
 
