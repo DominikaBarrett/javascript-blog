@@ -37,6 +37,7 @@ const titleClickHandler = function (event) {
   targetArticle.classList.add('active');
 }
 
+
 const optArticleSelector = '.post';
 const optTitleSelector = '.post-title';
 const optTitleListSelector = '.titles';
@@ -85,45 +86,45 @@ generateTitleLinks();
     /* find all articles */
     const articles = document.querySelectorAll(".post active");
   }
-  
+
     /* START LOOP: for every article: */
     for(let artical of articles){
 
-  
-    
-  
+
+
+
       /* find tags wrapper */
       const titleList = document.querySelector(optTitleListSelector);
 titleList.innerHTML = '';
       /* make html variable with empty string */
       const innerHTML = "";
-  
+
       /* get tags from data-tags attribute */
       const articleTags = article.getAttribute('data-tags');
-  
+
       /* split tags into array */
       const articleTagsArray = articleTags.split(' ');
-  
+
       /* START LOOP: for each tag */
       for(let tag of tags)
-  
+
         /* generate HTML of the link */
-      const link = "#" 
+      const link = "#"
       document.getElementsByClassName('post-tags').innerHTML = '<li><a href="' + link + '"></a></li> ';
-  
+
         /* add generated code to html variable */
         html = html + linkHTML;
       /* END LOOP: for each tag */
 }
-  
+
       /* insert HTML of all the links into the tags wrapper */
     tagList.innerHTML = html;
-    // /* END LOOP: for every article: */ 
+    // /* END LOOP: for every article: */
 }
-  
-  
+
+
   generateTags();
 }
 
 const generateArticlesLinks = function () {
-  gfor article of articles)
+  //for article of articles)
