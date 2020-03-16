@@ -128,9 +128,7 @@ function calculateTagClass(count, params) {
 function generateTags() {
   /* [NEW] create a new variable allTags with an empty array */
   let allTags = {};
-  const tagsParams = calculateTagsParams(allTags);
-  console.log('tagsParams:', tagsParams);
-  
+
 
   //* find all articles */
   const articles = document.querySelectorAll(optArticleSelector);
@@ -161,8 +159,9 @@ function generateTags() {
       console.log('tag', tag);
 
       //* generate HTML of the link */
-      const linkHTML = '<li><a href="#tag-' + tag + '" >' + tag + '</a></li>';
+      const linkHTML = '<li><a href="#tag-' + tag + '">' + tag + '</a></li>';
       console.log('linkHTML', linkHTML);
+      
 
       //* add generated code to html variable */
       html = html + linkHTML + ' ';
@@ -188,31 +187,29 @@ function generateTags() {
   }
   //* [NEW] find list of tags in right column */
   const tagiList = document.querySelector('.tags');
-  // const tagsParams = calculateTagsParams(allTags);
   console.log('tagi List', tagiList);
 
-  
- 
-
   //* [NEW] create variable for all links HTML code */
-  let allTagsHTML = ' ';
+  const tagsParams = calculateTagsParams(allTags);
   console.log('tagsParams:', tagsParams);
+  let allTagsHTML = '';
 
   /* [NEW] START LOOP: for each tag in allTags: */
   for (let tag in allTags) {
 
     /* [NEW] generate code of a link and add it to allTagsHTML */
-    allTagsHTML += tag + ' (' + allTags[tag] + ') ';
-  }
-  /* [NEW] END LOOP: for each tag in allTags: */
+    allTagsHTML += '<li><a href="#tag-' + tag + '" class="' + calculateTagClass(allTags[tag], tagsParams) + '">' + tag + ' ' + '</a></li> ';
   
-
+    /* [NEW] END LOOP: for each tag in allTags: */
+  }
   /*[NEW] add HTML from allTagsHTML to tagList */
   tagiList.innerHTML = allTagsHTML;
 }
 
-
 generateTags();
+
+
+
 
 function tagClickHandler(event) {
   /* prevent default action for this event */
@@ -291,8 +288,8 @@ function generateAuthors() {
     console.log('article Author', articleAuthor);
   
     // //* add generated code to html variable */
-    // const innerHTML = '<li><a href="#author-' + articleAuthor + '">' + articleAuthor + '</a></li>';
-    // html = html + innerHTML + ' ';
+    const innerHTML = '<li><a href="#author-' + articleAuthor + '">' + articleAuthor + '</a></li>';
+    html = html + innerHTML + ' ';
     // console.log('innerHTML', innerHTML);
     
     // //* insert HTML of all the links into the author wrapper */
