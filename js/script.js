@@ -14,7 +14,7 @@ const optCloudClassPrefix = 'tag-size-';
 
 
 
-const titleClickHandler = function (event) {
+const titleClickHandler = function(event) {
   event.preventDefault();
   const clickedElement = this;
   console.log('clicked', event);
@@ -83,7 +83,7 @@ function generateTitleLinks(customSelector = '') {
 
     /* insert link into html variable */
     html = html + linkHTML;
-    //console.log(html);
+
   }
 
   titleList.innerHTML = html;
@@ -189,6 +189,7 @@ function generateTags() {
   const tagiList = document.querySelector('.tags');
   console.log('tagi List', tagiList);
 
+
   //* [NEW] create variable for all links HTML code */
   const tagsParams = calculateTagsParams(allTags);
   console.log('tagsParams:', tagsParams);
@@ -198,8 +199,10 @@ function generateTags() {
   for (let tag in allTags) {
 
     /* [NEW] generate code of a link and add it to allTagsHTML */
-    allTagsHTML += '<li><a href="#tag-' + tag + '" class="' + calculateTagClass(allTags[tag], tagsParams) + '">' + tag + ' ' + '</a></li> ';
+    allTagsHTML += '<li><a class ="' + calculateTagClass(allTags[tag], tagsParams) + '" href="#' + tag + '">' + tag + ' ' + '(' + allTags[tag] + ')' + '</a></li>';
   
+    console.log('all Tags:', allTagsHTML);
+
     /* [NEW] END LOOP: for each tag in allTags: */
   }
   /*[NEW] add HTML from allTagsHTML to tagList */
@@ -293,8 +296,8 @@ function generateAuthors() {
     // console.log('innerHTML', innerHTML);
     
     // //* insert HTML of all the links into the author wrapper */
-    // authorsWrapper.innerHTML = html;
-    // console.log('authorsWrapper', authorsWrapper);
+    authorsWrapper.innerHTML = html;
+    console.log('authorsWrapper', authorsWrapper);
 
 
     //* [NEW] check if this link is NOT already in allAuthors */
@@ -315,13 +318,13 @@ function generateAuthors() {
     authorsWrapper.innerHTML = articleAuthor;
 
     // //*find list of Authors in right column*/
-    // const authorList = document.querySelector(optAuthorsListSelector);
-    // console.log('authorList', authorList);
+    const authorList = document.querySelector(optAuthorsListSelector);
+    console.log('authorList', authorList);
     
 
     // //* [NEW] create variable for all links HTML code * /
-    // let allAuthorsHTML = '';
-    // console.log('all authors HTML', allAuthorsHTML);
+    let allAuthorsHTML = '';
+    console.log('all authors HTML', allAuthorsHTML);
   }
 }
 generateAuthors();
