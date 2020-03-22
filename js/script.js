@@ -2,10 +2,11 @@
 "use strict";
 
 const optArticleSelector = '.post';
+const optAuthorsListSelector = ".list.authors";
 const optTitleSelector = '.post-title';
 const optTitleListSelector = '.titles';
 const optArticleTagsSelector = '.post-tags .list';
-const optArticleAuthorSelector = '.post.author a';
+const optArticleAuthorSelector = '.post.author';
 const optTagsListSelector = '.tags.list';
 const optCloudClassCount = 5;
 const optCloudClassPrefix = 'tag-size-';
@@ -283,7 +284,7 @@ function generateAuthors() {
 
     //* find authors wrapper */
     const authorWrapper = article.querySelector(optArticleAuthorSelector);
-    authorWrapper.innerHTML = '';
+    
     console.log('author wrapper', authorWrapper);
 
     //* make html variable with empty string */
@@ -315,8 +316,8 @@ function generateAuthors() {
 
     //* insert HTML of all the links into the tags wrapper */
 
-    authorWrapper.innerHTML = html;
-    console.log('author wrapper', authorWrapper);
+    // authorWrapper.innerHTML = '';
+    // console.log('author wrapper', authorWrapper);
     
   }
   //* END LOOP: for every article: */
