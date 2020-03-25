@@ -412,3 +412,14 @@ function addClickListenersToAuthors() {
 }
 addClickListenersToAuthors();
 
+function addClickListenersToAuthorsList() {
+  /* find all links to authors */
+  const authorLinks = document.querySelectorAll('.authors a');
+  /* START LOOP: for each link */
+  for (let authorLink of authorLinks) {
+    /* add tagClickHandler as event listener for that link */
+    authorLink.addEventListener('click', authorClickHandler);
+    /* END LOOP: for each link */
+  }
+}
+addClickListenersToAuthorsList();
